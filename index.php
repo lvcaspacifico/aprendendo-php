@@ -6,43 +6,33 @@
     <title>Hello, world of PHP 🐘</title>
 </head>
 <body>
-    <h1>Pedido de Pizza</h1>
+    <h1>Funções utilitárias do PHP</h1>
     <form action="index.php" method="POST">
-        <label for="qtd">
-            Quantidade:
-        </label><br>
-        <input type="number" step="1" name="qtd">
+        <label for="x">Elemento "x":</label><br>
+        <input type="text" name="x">
+        <label for="y">Elemento "y":</label><br>
+        <input type="text" name="y">
+        <input type="submit" value="Aplicar função">
         <br>
-        <label for="item">
-            Item:
-        </label><br>
-        <input type="text" name="item">
         <br>
-        <input type="submit" value="Pedir">
-    </form>    
+    </form>
 </body>
 </html>
 
 <?php
-    /*
-        $_GET = Data append na URL
-            não seguro
-            limite de char
-            GET request pode ser cacheada
-            Melhor para uma página de pesquisa
+    $total = null;
+    $x = $_POST["x"];
+    $y = $_POST["y"];
+    // $total = abs($x); // negativo vira positivo bruh
+    // $total = round($x); // arredonda pra cima se casas decimais >=.5
+    // $total = floor($x);
+    // $total = ceil($x);
+    // $total = sqrt($x);
+    // $total = pow($x, $y); // ex 5, 2 = 25 (5x5);
+    // $total = max($x, $y);
+    // $total = min($x, $y);
+    // $total = pi();
+    $total = rand(1,100);
+    echo "X = {$total}";
 
-        $_POST = Data no body do HTTP
-            Mais seguro
-            sem limite de dados
-            não dá pra favoritar
-            requests não são cacheadas
-            Melhor para credenciais
-    */
-
-    $qtd = $_POST["qtd"];
-    $item = $_POST["item"];
-    $preco = 20.99;
-    $total = $preco * $qtd;
-    echo "Você pediu {$qtd}x item {$item}";
-    echo "<br>Total: R\${$total}";
 ?>
