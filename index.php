@@ -1,39 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, world of PHP 🐘</title>
+</head>
+<body>
+    <h1>Pedido de Pizza</h1>
+    <form action="index.php" method="POST">
+        <label for="qtd">
+            Quantidade:
+        </label><br>
+        <input type="number" step="1" name="qtd">
+        <br>
+        <label for="item">
+            Item:
+        </label><br>
+        <input type="text" name="item">
+        <br>
+        <input type="submit" value="Pedir">
+    </form>    
+</body>
+</html>
+
 <?php
-    // This is a comment!
-    /* 
-        Data Types on PHP | variables string, int, float, bool, null
-    */
-
-    $name = "Lucas Pacífco";
-    $food = "pizza";
-    $age = 21;
-    $xp = 1.5;
-    $salary = 3.642;
-    $available = true; // aparece como 1 no echo, 0 não aparece atall
-
-    echo "Olá, me chamo {$name}!👋🏻<br>
-        Tenho: <br>
-        {$age} anos de idade<br>
-        {$xp} anos de experiência<br>
-        R\$ {$salary} foi meu maior salário TD<br>
-        Disponível para freelas: {$available}<br>";
-
-    $total = null;
-    $qtd = 3;
-    $price = 5.99;
-    echo "Você pediu {$qtd}x do item de R\${$price}";
-    $total = $qtd * $price;
-    echo "<br>Total: R\${$total}";
-
-    /* 
-        Operators
-    */
-
-    $isEven = 2 % 2;
-    echo "<br>Is even = {$isEven}";
     /*
-        Increment
+        $_GET = Data append na URL
+            não seguro
+            limite de char
+            GET request pode ser cacheada
+            Melhor para uma página de pesquisa
+
+        $_POST = Data no body do HTTP
+            Mais seguro
+            sem limite de dados
+            não dá pra favoritar
+            requests não são cacheadas
+            Melhor para credenciais
     */
-    $isEven+=2;
-    echo "<br>Is even = {$isEven}";
+
+    $qtd = $_POST["qtd"];
+    $item = $_POST["item"];
+    $preco = 20.99;
+    $total = $preco * $qtd;
+    echo "Você pediu {$qtd}x item {$item}";
+    echo "<br>Total: R\${$total}";
 ?>
