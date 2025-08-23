@@ -8,11 +8,9 @@
 <body>
     <h1>Funções utilitárias do PHP</h1>
     <form action="index.php" method="POST">
-        <label for="x">Elemento "x":</label><br>
-        <input type="text" name="x">
-        <label for="y">Elemento "y":</label><br>
-        <input type="text" name="y">
-        <input type="submit" value="Aplicar função">
+        <label for="radius">Radius:</label><br>
+        <input type="text" name="radius">
+        <input type="submit" value="Obter circunferência">
         <br>
         <br>
     </form>
@@ -20,19 +18,17 @@
 </html>
 
 <?php
-    $total = null;
-    $x = $_POST["x"];
-    $y = $_POST["y"];
-    // $total = abs($x); // negativo vira positivo bruh
-    // $total = round($x); // arredonda pra cima se casas decimais >=.5
-    // $total = floor($x);
-    // $total = ceil($x);
-    // $total = sqrt($x);
-    // $total = pow($x, $y); // ex 5, 2 = 25 (5x5);
-    // $total = max($x, $y);
-    // $total = min($x, $y);
-    // $total = pi();
-    $total = rand(1,100);
-    echo "X = {$total}";
+    $radius = $_POST["radius"];
+    $circunf = null;
+    $circunf = 2 * pi() * $radius;
+    $circunf = round($circunf, 5);
 
+    $area = pi() * pow($radius, 2);
+    $area = round($area, 5);
+
+    $volume = 4/3 * pi() * pow($radius, 3);
+    $volume = round($volume, 5);
+    echo "<br> Circunferência = {$circunf} cm";
+    echo "<br> Área = {$area}cm^2";
+    echo "<br> Volume = {$volume}cm";
 ?>
