@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello, world of PHP 🐘</title>
+    <form action="index.php" method="POST">
+        <input type="submit" value="stop" name="stop">
+    </form>
 </head>
 <body>
 </body>
@@ -11,44 +14,30 @@
 
 <?php
     /* 
-        Switch
+        For Loops
     */
-    // 💩 version:
-    $statusCode = 301;
 
-    if($statusCode == 200){
-        echo "Vixi";
-    } elseif($statusCode == 200){
-        echo "Vixi";
-    } elseif($statusCode == 201){
-        echo "Vixi1";
-    } elseif($statusCode == 202){
-        echo "Vixi2";
-    } elseif($statusCode == 200){
-        echo "Vixi";
+    // for($i = 0; $i < 5; $i++){
+    //     echo "Teste<br>";
+    // }
+    // echo "<br>";
+
+    // /* 
+    //     While Loops
+    // */
+    //     $counter = 0;
+    //     while($counter < 10){
+    //         $counter++;
+    //         echo "{$counter}<br>";
+    //     }
+    $i = null;
+    while($i  < 10){
+        if($_POST["stop"]){
+            echo "Parando de printar";
+            break;
+        }
+        $i++;
+        echo "{$i}";
     }
-        // ...
-
-    // 🪙 version
-
-    switch($statusCode){
-        case 300:
-            echo "Deu boa";
-            break;
-        case 301:
-            echo "Deu boa1";
-            break;
-        case 302:
-            echo "Deu boa2";
-            break;
-        case 303:
-            echo "Deu boa";
-            break;
-        case 300:
-            echo "Deu boa";
-            break;
-        default:
-            echo "Defaultou";
-            break;
-    }
+    
 ?>
