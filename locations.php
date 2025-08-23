@@ -9,7 +9,7 @@
     <title>PHP with Bro 🐘</title>
 </head>
 <body>
-    The blog content goes in here.
+    Locations and shift
 </body>
 </html>
 <?php

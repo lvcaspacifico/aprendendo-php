@@ -9,7 +9,7 @@
     <title>PHP with Bro 🐘</title>
 </head>
 <body>
-    The blog content goes in here.
+    About the project
 </body>
 </html>
 <?php
