@@ -11,31 +11,44 @@
 
 <?php
     /* 
-        Conditions if elseif else
+        Switch
     */
-    // $age = 17;
-    // if($age >= 18){
-    //     echo "Allowed: you may enter the site!";
-    // } 
-    // elseif($age == 17){
-    //     echo "One more year to go: you must be 18 or more to enter the site";
-    // }
-    // else {
-    //     echo "Not allowed: you must be 18 or more to enter the site";
-    // }
-    /*
-        Logical operators
-    */
-    $bill = 21.99;
-    if($bill > 21.98 && $bill != 0){
-        echo "Must pay this shit, sire";
-    };
-    $mustPay = false;
-    if(!$mustPay){
-        echo "Must pay this shit, sire";
-    };
-    if(!$mustPay || $bill > 50){
-        echo "Pay aswell";
-    };
+    // 💩 version:
+    $statusCode = 301;
 
+    if($statusCode == 200){
+        echo "Vixi";
+    } elseif($statusCode == 200){
+        echo "Vixi";
+    } elseif($statusCode == 201){
+        echo "Vixi1";
+    } elseif($statusCode == 202){
+        echo "Vixi2";
+    } elseif($statusCode == 200){
+        echo "Vixi";
+    }
+        // ...
+
+    // 🪙 version
+
+    switch($statusCode){
+        case 300:
+            echo "Deu boa";
+            break;
+        case 301:
+            echo "Deu boa1";
+            break;
+        case 302:
+            echo "Deu boa2";
+            break;
+        case 303:
+            echo "Deu boa";
+            break;
+        case 300:
+            echo "Deu boa";
+            break;
+        default:
+            echo "Defaultou";
+            break;
+    }
 ?>
