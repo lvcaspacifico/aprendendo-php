@@ -7,41 +7,43 @@
 </head>
 <body>
     <form action="index.php" method="POST">
-        <label for="user">Username:</label><br>
-        <input type="text" name="user"><br><br>
-        <label for="password">Password:</label><br>
-        <input type="text" name="password"><br>
-        <br>
-        <input type="submit" value="Log in" name="login"><br><br>
+        <input type="radio" name="credit_card" value="vi">
+        Visa<br>    
+        <input type="radio" name="credit_card" value="mc">
+        Mastercard<br>    
+        <input type="radio" name="credit_card" value="ae">
+        American Express<br><br><br>    
+        <input type="submit" name="confirm" value="Confirm">
     </form>
 </body>
 </html>
 
 <?php
     /* 
-        isset() = Retorna TRUE se var é declarada e não null
-        empty() = Retorna TRUE se var não esta declarada, falsa, null ou ""
+        Radio 
     */
 
-    foreach($_POST as $key => $value){
-        echo "Key = " . $key . " | Value = " . $value . "<br>";
-    }
+    if(isset($_POST["confirm"])){
+       
+        if(isset($_POST["credit_card"])){ 
+            $credit_card = $_POST["credit_card"]; 
 
-    if(isset($_POST["login"])){
-        $user = $_POST["user"];
-        $password = $_POST["password"];
+            switch($credit_card){
+                case "vi":
+                    echo "VISA a VIS";
+                    break;
+                case "mc":
+                    echo "Master, master!";
+                    break;
+                case "ae":
+                    echo "Zuuuuum! It's express.";
+                    break;
+                default:
+                    echo "WTF";
+            }
 
-        if(empty($user)){
-            echo "No muhfucka user, man <br>";
         } else {
-            echo "";
+            echo "Please select a card";
         }
-        if(empty($password)){
-            echo "No muhfucka password, man <br>";
-        } else {
-            echo "";
-        }
-    }
-   
-        
+    }  
 ?>
