@@ -6,29 +6,36 @@
     <title>Hello, world of PHP 🐘</title>
 </head>
 <body>
-    <h1>Funções utilitárias do PHP</h1>
-    <form action="index.php" method="POST">
-        <label for="radius">Radius:</label><br>
-        <input type="text" name="radius">
-        <input type="submit" value="Obter circunferência">
-        <br>
-        <br>
-    </form>
 </body>
 </html>
 
 <?php
-    $radius = $_POST["radius"];
-    $circunf = null;
-    $circunf = 2 * pi() * $radius;
-    $circunf = round($circunf, 5);
+    /* 
+        Conditions if elseif else
+    */
+    // $age = 17;
+    // if($age >= 18){
+    //     echo "Allowed: you may enter the site!";
+    // } 
+    // elseif($age == 17){
+    //     echo "One more year to go: you must be 18 or more to enter the site";
+    // }
+    // else {
+    //     echo "Not allowed: you must be 18 or more to enter the site";
+    // }
+    /*
+        Logical operators
+    */
+    $bill = 21.99;
+    if($bill > 21.98 && $bill != 0){
+        echo "Must pay this shit, sire";
+    };
+    $mustPay = false;
+    if(!$mustPay){
+        echo "Must pay this shit, sire";
+    };
+    if(!$mustPay || $bill > 50){
+        echo "Pay aswell";
+    };
 
-    $area = pi() * pow($radius, 2);
-    $area = round($area, 5);
-
-    $volume = 4/3 * pi() * pow($radius, 3);
-    $volume = round($volume, 5);
-    echo "<br> Circunferência = {$circunf} cm";
-    echo "<br> Área = {$area}cm^2";
-    echo "<br> Volume = {$volume}cm";
 ?>
