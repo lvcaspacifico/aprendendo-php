@@ -18,6 +18,6 @@
     }
 
     if($conn){
-        echo "You are connected!";
+        echo "<i>~ ~ you are connected :)</i>";
     }
 ?>
