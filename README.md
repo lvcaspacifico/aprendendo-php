@@ -31,3 +31,8 @@ A sintaxe do PHP trouxe algo que eu nunca tinha visto, achei que usar `Database:
 
 Hoje eu foquei na parte de leitura e escrita de arquivos, e métodos especiais de JSON e CSV. Não é muito diferente do que é feito com Python ou JavaScript.
 
+### Dia 5 - 27/08/2025
+
+Objetos, Herança, Polimorfismo, Interfaces... tudo muito parecido com o que já aprendi em Java. Achei interessante os conceitos novos de Namespace e Traits.
+
+Nada muito fora do comum,só algumas peculiaridades da linguagem mas bem fácil de entender e utilizar até aqui.
